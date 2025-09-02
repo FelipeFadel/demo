@@ -9,7 +9,7 @@ O usuario pode gravar ideias, ideias musicais, trechos de musicas, historias do 
 
 ### Ambiente de desenvolvimento e ferramentas
 
-- [Expo Router] (https://docs.expo.dev/versions/latest/sdk/router)
+- [Expo Router](https://docs.expo.dev/versions/latest/sdk/router)
 
 >### Funcionalidades
 >
@@ -19,7 +19,7 @@ O usuario pode gravar ideias, ideias musicais, trechos de musicas, historias do 
 > - Editar informações do audio (nome, anotações)
 
 > ### Possiveis Funcionalidades
-> Usar a API [cifraclub-api] (https://github.com/code4music/cifraclub-api)
+> Usar a API [cifraclub-api](https://github.com/code4music/cifraclub-api)
 > A ideia é usa-la para apresentar cifras pro usuario enquanto ele grava algo, mas estou vendo se nessa versão vai dar tempo 
 
 ## Protótipos de tela
