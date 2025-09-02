@@ -44,96 +44,67 @@ O esquema se dará assim:
 
 ### Sprint 5 (Semana 5)
 
-- []Implementar Tela de Detalhes do Áudio (nome + anotações).
+- [ ] Implementar Tela de Detalhes do Áudio (nome + anotações).
 - [ ] Criar segundo componente custom (ex: card/list item de gravação).
-- [x] Integrar gravação → salvar → exibir na tela inicial (com dados fake).
+- [ ] Integrar gravação → salvar → exibir na tela inicial (com dados fake).
 
-Sprint 6 (Semana 6)
+### Sprint 6 (Semana 6)
 
-Finalizar roteamento entre telas.
+- [ ] Finalizar roteamento entre telas.
+- [ ] Estilizar telas criadas.
+- [ ] Configurar headers e meta-dados de navegação.
 
-Estilizar telas criadas.
+### Sprint 7 (Semana 7)
 
-Configurar headers e meta-dados de navegação.
+- [ ] Implementar fluxo de edição e exclusão de gravações (dados fake).
+- [ ] Garantir 3 telas populadas com placeholders.
+- [ ] Revisar consistência visual.
 
-Sprint 7 (Semana 7)
+### Sprint 8 (Semana 8)
 
-Implementar fluxo de edição e exclusão de gravações (dados fake).
+- [ ] Revisão geral para Checkpoint.
+- [ ] Refino de UI/UX.
+- [ ] Atualizar README.md com progresso e checklist.
 
-Garantir 3 telas populadas com placeholders.
+### Sprint 9 (Semana 9 – Checkpoint Parcial)
 
-Revisar consistência visual.
+- [ ] Entregar versão parcial
+- [ ] Expo Router configurado.
+- [ ] 3 telas criadas, estilizadas e navegáveis.
+- [ ] 2 componentes custom implementados.
+- [ ] Telas populadas com dados fake.
+- [ ] README.md atualizado com seção “Atualizações desde o último checkpoint”.
 
-Sprint 8 (Semana 8)
+### Sprint 10 (Semana 10)
 
-Revisão geral para Checkpoint.
+- [ ] Integrar Firebase (upload de áudios reais).
+- [ ] Armazenar metadados (nome, anotações, data).
+- [ ] Testes de persistência.
 
-Refino de UI/UX.
+### Sprint 11 (Semana 11)
 
-Atualizar README.md com progresso e checklist.
+- [ ] Listagem de gravações usando dados reais.
+- [ ] Implementar edição de gravações (Firebase).
+- [ ] Ajustar fluxo de exclusão no banco.
 
-Gravar vídeo (até 1 min) navegando entre as telas.
+### Sprint 12 (Semana 12)
 
-Sprint 9 (Semana 9 – Checkpoint Parcial)
+- [ ] Testes em dispositivos/emuladores.
+- [ ] Correção de bugs.
+- [ ] Preparação para build final (APK).
 
-Entregar versão parcial com:
+### Sprint 13 (Semana 13)
 
-Expo Router configurado.
+- [ ] Adicionar validações de entrada (nome, anotações).
+- [ ] Exibir feedback visual de erros.
+- [ ] Refinar.
 
-3 telas criadas, estilizadas e navegáveis.
+### Sprint 14 (Semana 14)
 
-2 componentes custom implementados.
+- [ ] Corrigir o nescessario
+- [ ] Atualizar README.md com últimas tarefas.
 
-Telas populadas com dados fake.
+### Sprint 15 (Semana 15 – Entrega Final)
 
-README.md atualizado com seção “Atualizações desde o último checkpoint”.
-
-Sprint 10 (Semana 10)
-
-Integrar Firebase (upload de áudios reais).
-
-Armazenar metadados (nome, anotações, data).
-
-Testes de persistência.
-
-Sprint 11 (Semana 11)
-
-Listagem de gravações usando dados reais.
-
-Implementar edição de gravações (Firebase).
-
-Ajustar fluxo de exclusão no banco.
-
-Sprint 12 (Semana 12)
-
-Testes em diferentes dispositivos/emuladores.
-
-Correção de bugs.
-
-Preparação para build final (APK).
-
-Sprint 13 (Semana 13)
-
-Adicionar validações de entrada (nome, anotações).
-
-Exibir feedback visual de erros.
-
-Refinar performance.
-
-Sprint 14 (Semana 14)
-
-Preparar material de defesa final:
-
-Prints para card generator.
-
-Roteiro para vídeo.
-
-Atualizar README.md com últimas tarefas.
-
-Sprint 15 (Semana 15 – Entrega Final)
-
-Gerar release (APK) no GitHub.
-
-Gravar vídeo final (até 7 minutos).
-
-Atualizar README.md com justificativas de tarefas não concluídas (se houver).
+- [ ] Gerar release (APK) no GitHub.
+- [ ] Gravar vídeo final.
