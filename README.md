@@ -10,6 +10,7 @@ O usuario pode gravar ideias, ideias musicais, trechos de musicas, historias do 
 ### Ambiente de desenvolvimento e ferramentas
 
 - [Expo Router](https://docs.expo.dev/versions/latest/sdk/router)
+- [Firebase](https://firebase.google.com/docs/firestore?hl=pt-br).
 
 >### Funcionalidades
 >
@@ -19,12 +20,17 @@ O usuario pode gravar ideias, ideias musicais, trechos de musicas, historias do 
 > - Editar informações do audio (nome, anotações)
 
 > ### Possiveis Funcionalidades
-> Usar a API [cifraclub-api](https://github.com/code4music/cifraclub-api)
+> 
+> Usar a API [cifraclub-api](https://github.com/code4music/cifraclub-api).
 > A ideia é usa-la para apresentar cifras pro usuario enquanto ele grava algo, mas estou vendo se nessa versão vai dar tempo 
 
 ## Protótipos de tela
 
+O Desing das três telas que possuo até o momento podem ser encontrada no [Figma](https://www.figma.com/design/dYXCACjfGhCD6eFqzoFpME/ToNote?node-id=69-9480&t=T8dDGtEqx2YNbeil-0)
 
+>
+> Também coloquei em uma [pasta do pinterest](https://br.pinterest.com/dasilvafadelfelipe/demo) algumas inspirações para aumentar o design futuramente
+>
 
 ## Modelagem do banco
 
