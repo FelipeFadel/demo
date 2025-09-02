@@ -44,9 +44,9 @@ O esquema se dará assim:
 
 ### Sprint 5 (Semana 5)
 
-- [] Implementar Tela de Detalhes do Áudio (nome + anotações).
-- [] Criar segundo componente custom (ex: card/list item de gravação).
-- [] Integrar gravação → salvar → exibir na tela inicial (com dados fake).
+- []Implementar Tela de Detalhes do Áudio (nome + anotações).
+- [ ] Criar segundo componente custom (ex: card/list item de gravação).
+- [x] Integrar gravação → salvar → exibir na tela inicial (com dados fake).
 
 Sprint 6 (Semana 6)
 
