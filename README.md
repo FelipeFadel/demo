@@ -34,7 +34,7 @@ O Desing das três telas que possuo até o momento podem ser encontrada no [Figm
 
 ## Modelagem do banco
 
-![Schema do banco de dados]("https://drive.google.com/file/d/1KknYP31v6g3iZr2TM4w304z22RwkfoAT/view?usp=sharing")
+![Schema do banco de dados](https://i.pinimg.com/736x/db/c0/21/dbc021f87488b5930c377e9c98df3dd4.jpg)
 
 Ainda não tenho certeza se o banco será remoto ou local, mas acredito que as gravações colocarei no FireBase e os detalhes em algo não relacional como em um sistema de arquivos JSON
 O esquema se dará assim:
