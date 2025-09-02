@@ -12,12 +12,12 @@ O usuario pode gravar ideias, ideias musicais, trechos de musicas, historias do 
 - [Expo Router](https://docs.expo.dev/versions/latest/sdk/router)
 - [Firebase](https://firebase.google.com/docs/firestore?hl=pt-br).
 
->### Funcionalidades
->
-> - Gravar um audio 
-> - Salvar audio (local ou na nuvem)
-> - Excluir audio
-> - Editar informações do audio (nome, anotações)
+### Funcionalidades
+
+- Gravar um audio 
+- Salvar audio (local ou na nuvem)
+- Excluir audio
+- Editar informações do audio (nome, anotações)
 
 > ### Possiveis Funcionalidades
 > 
@@ -33,5 +33,11 @@ O Desing das três telas que possuo até o momento podem ser encontrada no [Figm
 >
 
 ## Modelagem do banco
+
+![Schema do banco de dados]("C:\Users\Usuário\Downloads\SchemaDemo.drawio.png")
+
+Ainda não tenho certeza se o banco será remoto ou local, mas acredito que as gravações colocarei no FireBase e os detalhes em algo não relacional como em um sistema de arquivos JSON
+O esquema se dará assim:
+
 
 ## Planejamento de sprints
