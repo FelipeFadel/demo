@@ -1,17 +1,17 @@
 import Format from "@/components/Format";
 import GridSquare from "@/components/GridSquare";
-import InputText from "@/components/InputText";
+import { recorder } from "@/hooks/recorder";
 import { Button } from "@rneui/themed";
 import { Href, router } from "expo-router";
-import { useState } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
+  const { recording, uri, startRecording, stopRecording, playSound } =
+    recorder();
+
   function openRecs(path: Href) {
     router.push(path);
   }
-
-  const [text, setText] = useState("");
 
   return (
     <View style={styles.container}>
@@ -23,24 +23,33 @@ export default function Index() {
           <Text style={styles.text}>Rec</Text>
           <Text style={styles.text}>Demo</Text>
         </View>
+
         <View style={styles.flex}>
           <Button
             onPress={() => openRecs("/recs/")}
             title={"Gravar"}
-            containerStyle={{
-              marginHorizontal: 10,
-              marginVertical: 10,
-            }}
+            containerStyle={{ marginHorizontal: 10, marginVertical: 10 }}
           />
           <Button
             onPress={() => openRecs("/recs/teste")}
             title={"Ver gravações"}
-            containerStyle={{
-              marginHorizontal: 10,
-              marginVertical: 10,
-            }}
+            containerStyle={{ marginHorizontal: 10, marginVertical: 10 }}
+          />
+
+          <Button
+            onPress={recording ? stopRecording : startRecording}
+            title={recording ? "Parar Gravação" : "Iniciar Gravação"}
+            containerStyle={{ marginHorizontal: 10, marginVertical: 10 }}
+          />
+
+          <Button
+            onPress={playSound}
+            title={"Tocar Áudio Gravado"}
+            disabled={!uri}
+            containerStyle={{ marginHorizontal: 10, marginVertical: 10 }}
           />
         </View>
+
         <View style={styles.gridContainer}>
           <Format type="circle" size={320} color="#030200" borderWidth={4} />
           <GridSquare
@@ -52,22 +61,14 @@ export default function Index() {
             style={{ position: "absolute", top: 0, left: 0 }}
           />
         </View>
-        <View style={[styles.gridContainer, { marginTop: 100 }]}>
-          <GridSquare
-            type="square"
-            color="#70CDDE"
-            rows={6}
-            cols={6}
-            pointSize={25}
-            spacing={12}
-            style={{ position: "absolute", top: 0, left: 0 }}
-          />
-        </View>
-        <InputText
-          value={text}
-          onChange={setText}
-          placeholder="Digite algo..."
-        />
+
+        {uri && (
+          <Text style={{ marginTop: 20, color: "#030200", fontSize: 14 }}>
+            Arquivo salvo em:
+            {"\n"}
+            {uri}
+          </Text>
+        )}
       </ScrollView>
     </View>
   );
