@@ -39,7 +39,10 @@ export default function Index() {
 
   function handleSave() {
     if (audioUri) {
-      router.push("/recs/index");
+      router.push({
+        pathname: "/recs/[data_id]",
+        params: { data_id: encodeURIComponent(audioUri!) },
+      });
     }
   }
 
@@ -53,13 +56,11 @@ export default function Index() {
         style={{ width: "100%" }}
         contentContainerStyle={{ alignItems: "center" }}
       >
-        {/* Título */}
         <View style={styles.textContainer}>
           <Text style={styles.text}>Rec</Text>
           <Text style={styles.text}>Demo</Text>
         </View>
 
-        {/* Formato e grid */}
         <View style={styles.gridContainer}>
           <Format type="circle" size={280} color="#030200" borderWidth={2.4} />
           <GridSquare
@@ -72,7 +73,6 @@ export default function Index() {
           />
         </View>
 
-        {/* Botões principais */}
         <View style={styles.flex}>
           <View style={styles.buttonRow}>
             <IconButton
@@ -99,7 +99,7 @@ export default function Index() {
               textColor="#030200"
               borderColor="#030200"
               onPress={handleSave}
-              disabled={!audioUri}
+              // disabled={!audioUri}
               width="85%"
               type="outline"
               height={55}
@@ -148,7 +148,9 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "#030200",
-    fontSize: 50,
+    fontSize: 65,
+    fontWeight: 700,
+    lineHeight: 80,
   },
   gridContainer: {
     marginTop: 30,
