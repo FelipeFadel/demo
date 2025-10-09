@@ -21,7 +21,7 @@ O usuario pode gravar ideias, ideias musicais, trechos de musicas, historias do 
 
 > ### Possiveis Funcionalidades
 > 
-> Usar a API [cifraclub-api](https://github.com/code4music/cifraclub-api).
+> Usar a `API` [cifraclub-api](https://github.com/code4music/cifraclub-api).
 > A ideia é usa-la para apresentar cifras pro usuario enquanto ele grava algo, mas estou vendo se nessa versão vai dar tempo 
 
 ## Protótipos de tela
@@ -36,44 +36,64 @@ O Desing das três telas que possuo até o momento podem ser encontrada no [Figm
 
 ![Schema do banco de dados](https://i.pinimg.com/736x/db/c0/21/dbc021f87488b5930c377e9c98df3dd4.jpg)
 
-Ainda não tenho certeza se o banco será remoto ou local, mas acredito que as gravações colocarei no FireBase e os detalhes em algo não relacional como em um sistema de arquivos JSON
+Ainda não tenho certeza se o banco será remoto ou local, mas acredito que as gravações colocarei no FireBase e os detalhes em algo não relacional como em um sistema de arquivos `JSON`
 O esquema se dará assim:
+
+## Atualizações desde o último checkpoint
+
+## Atualizações desde o último checkpoint
+
+### Recursos usados dos módulos
+- Usei a biblioteca `React Native Elements` para facilitar o uso de alguns componentes, como `Button`, `Input` e `Card`;
+- Até o próximo checkpoint, pretendo utilizar o `NativeWind` para aprimorar o design e deixar a interface mais consistente;
+- Utilizei o `Expo Router` em toda a navegação;
+- Tentei dividir as *pull requests* da melhor forma possível, mas elas não seguem exatamente as *sprints*;
+  - Foram criadas *issues* com algumas *tasks* para cada *pull request*;
+  - Uma *PR* que está fechada foi feita diretamente pelo terminal, pois meu GitHub ficou fora do ar por um tempo.
+
+### Boas práticas utilizadas até agora (pretendo aplicar mais até o próximo checkpoint)
+- Uso de *mocks* para popular a aplicação;
+- Criação de vários componentes personalizados para evitar código poluído;
+- Desenvolvimento de um *hook* personalizado para as funções de gravação e reprodução:
+  - Usei a biblioteca `expo-av`;
+  - O *hook* foi construído com base na documentação oficial da biblioteca;
+- Isolamento de componentes repetidos, como os botões da tela inicial.
 
 
 ## Planejamento de sprints
 
 ### Sprint 5 (Semana 5)
 
-- [ ] Implementar Tela de Detalhes do Áudio (nome + anotações).
-- [ ] Criar segundo componente custom (ex: card/list item de gravação).
-- [ ] Integrar gravação → salvar → exibir na tela inicial (com dados fake).
+- [x] Implementar Tela de Detalhes do Áudio (nome + anotações).
+- [x] Criar segundo componente custom (ex: `card/list` item de gravação).
+- [x] Integrar gravação → salvar → exibir na tela inicial (com dados fake).
 
 ### Sprint 6 (Semana 6)
 
-- [ ] Finalizar roteamento entre telas.
-- [ ] Estilizar telas criadas.
-- [ ] Configurar headers e meta-dados de navegação.
+- [x] Finalizar roteamento entre telas.
+- [x] Estilizar telas criadas.
+- [x] Configurar `headers` e `meta-dados` de navegação.
 
 ### Sprint 7 (Semana 7)
 
 - [ ] Implementar fluxo de edição e exclusão de gravações (dados fake).
-- [ ] Garantir 3 telas populadas com placeholders.
-- [ ] Revisar consistência visual.
+- [x] Garantir 3 telas populadas com `placeholders`.
+- [x] Revisar consistência visual.
 
 ### Sprint 8 (Semana 8)
 
-- [ ] Revisão geral para Checkpoint.
-- [ ] Refino de UI/UX.
-- [ ] Atualizar README.md com progresso e checklist.
+- [x] Revisão geral para Checkpoint.
+- [x] Refino de `UI/UX`.
+- [x] Atualizar `README.md` com progresso e checklist.
 
 ### Sprint 9 (Semana 9 – Checkpoint Parcial)
 
-- [ ] Entregar versão parcial
-- [ ] Expo Router configurado.
-- [ ] 3 telas criadas, estilizadas e navegáveis.
-- [ ] 2 componentes custom implementados.
-- [ ] Telas populadas com dados fake.
-- [ ] README.md atualizado com seção “Atualizações desde o último checkpoint”.
+- [x] Entregar versão parcial
+- [x] Expo Router configurado.
+- [x] 3 telas criadas, estilizadas e navegáveis.
+- [x] 2 componentes custom implementados.
+- [x] Telas populadas com dados fake.
+- [x] `README.md` atualizado com seção “Atualizações desde o último checkpoint”.
 
 ### Sprint 10 (Semana 10)
 
