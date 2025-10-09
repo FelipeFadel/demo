@@ -1,16 +1,50 @@
 import Format from "@/components/Format";
 import GridSquare from "@/components/GridSquare";
+import IconButton from "@/components/IconButton";
 import { recorder } from "@/hooks/recorder";
-import { Button } from "@rneui/themed";
-import { Href, router } from "expo-router";
+import { router } from "expo-router";
+import { useState } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
-  const { recording, uri, startRecording, stopRecording, playSound } =
-    recorder();
+  const { startRecording, stopRecording, playSound, uri } = recorder();
+  const [status, setStatus] = useState<"idle" | "recording" | "readyToPlay">(
+    "idle"
+  );
+  const [audioUri, setAudioUri] = useState<string | null>(null);
 
-  function openRecs(path: Href) {
-    router.push(path);
+  async function handlePress() {
+    if (status === "idle") {
+      await startRecording();
+      setStatus("recording");
+    } else if (status === "recording") {
+      await stopRecording();
+      setStatus("readyToPlay");
+    } else if (status === "readyToPlay" && audioUri) {
+      await playSound();
+    }
+  }
+
+  function getButtonIcon() {
+    if (status === "idle") return "mic";
+    if (status === "recording") return "stop";
+    if (status === "readyToPlay") return "play-arrow";
+    return "mic";
+  }
+
+  function handleDelete() {
+    setAudioUri(null);
+    setStatus("idle");
+  }
+
+  function handleSave() {
+    if (audioUri) {
+      router.push("/recs/index");
+    }
+  }
+
+  if (uri && uri !== audioUri) {
+    setAudioUri(uri);
   }
 
   return (
@@ -19,56 +53,79 @@ export default function Index() {
         style={{ width: "100%" }}
         contentContainerStyle={{ alignItems: "center" }}
       >
+        {/* Título */}
         <View style={styles.textContainer}>
           <Text style={styles.text}>Rec</Text>
           <Text style={styles.text}>Demo</Text>
         </View>
 
-        <View style={styles.flex}>
-          <Button
-            onPress={() => openRecs("/recs/")}
-            title={"Gravar"}
-            containerStyle={{ marginHorizontal: 10, marginVertical: 10 }}
-          />
-          <Button
-            onPress={() => openRecs("/recs/teste")}
-            title={"Ver gravações"}
-            containerStyle={{ marginHorizontal: 10, marginVertical: 10 }}
-          />
-
-          <Button
-            onPress={recording ? stopRecording : startRecording}
-            title={recording ? "Parar Gravação" : "Iniciar Gravação"}
-            containerStyle={{ marginHorizontal: 10, marginVertical: 10 }}
-          />
-
-          <Button
-            onPress={playSound}
-            title={"Tocar Áudio Gravado"}
-            disabled={!uri}
-            containerStyle={{ marginHorizontal: 10, marginVertical: 10 }}
-          />
-        </View>
-
+        {/* Formato e grid */}
         <View style={styles.gridContainer}>
-          <Format type="circle" size={320} color="#030200" borderWidth={4} />
+          <Format type="circle" size={280} color="#030200" borderWidth={2.4} />
           <GridSquare
             type="circle"
             rows={8}
             cols={8}
-            pointSize={25}
-            spacing={12}
+            pointSize={18}
+            spacing={10}
             style={{ position: "absolute", top: 0, left: 0 }}
           />
         </View>
 
-        {uri && (
+        {/* Botões principais */}
+        <View style={styles.flex}>
+          <View style={styles.buttonRow}>
+            <IconButton
+              iconName={getButtonIcon()}
+              onPress={handlePress}
+              color={status === "recording" ? "#FE5252" : "#70CDDE"}
+              size={75}
+            />
+
+            <IconButton
+              iconName="delete"
+              onPress={handleDelete}
+              color="#FE5252"
+              size={75}
+              disabled={!audioUri}
+            />
+          </View>
+
+          <View style={styles.bottomButtons}>
+            <IconButton
+              title="Salvar Gravação"
+              iconName="save"
+              color="#FFF"
+              textColor="#030200"
+              borderColor="#030200"
+              onPress={handleSave}
+              disabled={!audioUri}
+              width="85%"
+              type="outline"
+              height={55}
+            />
+
+            <IconButton
+              title="Ver Gravações"
+              iconName="library-music"
+              onPress={() => router.push("/recs/teste")}
+              color="#FFF"
+              textColor="#030200"
+              borderColor="#030200"
+              type="outline"
+              width="85%"
+              height={55}
+            />
+          </View>
+        </View>
+
+        {/* {audioUri && (
           <Text style={{ marginTop: 20, color: "#030200", fontSize: 14 }}>
             Arquivo salvo em:
             {"\n"}
-            {uri}
+            {audioUri}
           </Text>
-        )}
+        )} */}
       </ScrollView>
     </View>
   );
@@ -100,5 +157,17 @@ const styles = StyleSheet.create({
     position: "relative",
     justifyContent: "center",
     alignItems: "center",
+  },
+  buttonRow: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    marginTop: 40,
+  },
+  bottomButtons: {
+    marginTop: 30,
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+    gap: 12,
   },
 });
