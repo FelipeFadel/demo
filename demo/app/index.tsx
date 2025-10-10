@@ -108,7 +108,7 @@ export default function Index() {
             <IconButton
               title="Ver Gravações"
               iconName="library-music"
-              onPress={() => router.push("/recs/teste")}
+              onPress={() => router.push("/recs/")}
               color="#FFF"
               textColor="#030200"
               borderColor="#030200"
