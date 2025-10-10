@@ -7,6 +7,9 @@ Um app para capturar as breves epifanias da sua vida
 A ideia do aplicativo é que ele sirva para fazer anotações, tendo como base gravações de audio.
 O usuario pode gravar ideias, ideias musicais, trechos de musicas, historias do dia a dia e o que mais quiser. A criatividade é quem manda.
 
+## Gravação das 3 telas para o checkpoint 3
+https://youtu.be/IEMUfgafNyQ
+
 ### Ambiente de desenvolvimento e ferramentas
 
 - [Expo Router](https://docs.expo.dev/versions/latest/sdk/router)
